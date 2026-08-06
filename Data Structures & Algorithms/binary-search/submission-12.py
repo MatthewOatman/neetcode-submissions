@@ -1,0 +1,20 @@
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        l, r = 0, len(nums) - 1
+
+        while l <= r:
+            mid = (l + r) // 2
+
+            print("mid: ", mid)
+            print(nums[mid])
+            print("l: ", l)
+            print("r: ", r, "\n")
+
+            if target < nums[mid]:
+                r = mid - 1
+            elif target > nums[mid]:
+                l = mid + 1
+            elif nums[mid] == target:
+                return mid
+
+        return -1
